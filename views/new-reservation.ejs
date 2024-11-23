@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt Chỗ Mới</title>
+  <style>
+    /* Style giống như những trang trước */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      color: #333;
+    }
+    h1 {
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin: 0;
+      font-size: 2em;
+    }
+    form {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(135deg, #4CAF50, #66BB6A);
+      border: none;
+      color: white;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #66BB6A, #388E3C);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .btn-back {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      font-size: 1em;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Đặt Chỗ Mới</h1>
+  <a href="/" class="btn-back">Quay Lại Trang Chủ</a>
+
+  <form id="reservation-form">
+    <label for="customer-name">Tên Khách Hàng:</label>
+    <input type="text" id="customer-name" name="customer-name" placeholder="Nhập tên khách hàng" required>
+    <label for="reservation-date">Ngày Đặt:</label>
+    <input type="date" id="reservation-date" name="reservation-date" required>
+    <label for="reservation-time">Thời Gian:</label>
+    <input type="time" id="reservation-time" name="reservation-time" required>
+    <button type="submit">Đặt Chỗ Mới</button>
+  </form>
+</body>
+</html>

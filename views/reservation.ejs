@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Đặt Chỗ</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      color: #333;
+    }
+    h1 {
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin: 0;
+      font-size: 2em;
+    }
+    table {
+      margin: 20px auto;
+      width: 90%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: linear-gradient(135deg, #4CAF50, #66BB6A);
+      color: white;
+    }
+    .btn-back {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      font-size: 1em;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      width: 200px;
+    }
+    .status-pending {
+      color: #FFC107; /* Yellow */
+    }
+    .status-confirmed {
+      color: #4CAF50; /* Green */
+    }
+    .status-cancelled {
+      color: #F44336; /* Red */
+    }
+  </style>
+</head>
+<body>
+  <h1>Danh Sách Đặt Chỗ</h1>
+  <a href="/" class="btn-back">Quay Lại Trang Chủ</a>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên Khách Hàng</th>
+        <th>Ngày</th>
+        <th>Thời Gian</th>
+        <th>Trạng Thái</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% reservations.forEach(reservation => { %>
+      <tr>
+        <td><%= reservation.id %></td>
+        <td><%= reservation.customerName %></td>
+        <td><%= reservation.date %></td>
+        <td><%= reservation.time %></td>
+        <td class="<%= reservation.status === 'Pending' ? 'status-pending' : reservation.status === 'Confirmed' ? 'status-confirmed' : 'status-cancelled' %>">
+          <%= reservation.status %>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
